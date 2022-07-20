@@ -4,9 +4,125 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Hello world</h1>
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css" 
+    />
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <body>    
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <h1 id="cityName" ></h1>
+          <br>
+          <div id="currentDate"> Wednesday 1</div>
+          <br>
+          <div id="description"> Sunny</div>
+        </div>
+        <div class="col-4">
+            <br>
+          <span class="current-temperature" id="display-temp"></span>
+          <a href="#" class="current-temperature" id="celcius"> C </a>
+          
+          <a href="#" class="current-temperature" id="fahrenheit"> F </a>
+          <br>
+          <div>feels like <span id="feelsLike"></span>°</div>
+        </div>
+        <div class="col-3">          
+            <form> 
+              <input type="search" name="text" class="search" id="searchCity" placeholder="Search city" autocomplete="off">   
+            </form>      
+              <br>
+            <ul class="day-detail">
+                <li>sunrise: <span id="sunrise"></span></li>
+                <li>sunset: <span id="sunrise"></span></li>
+                <li>humidity: <span id="humidity"></span>%</li>
+                <li>wind: <span id="wind"></span>m/s</li>
+            </ul>
+        </div>
+        <div class="col-1">
+          <button id="searchPosition">📍</button>
+        </div>
+      </div>
+      <br />     
+      <div class="row row-cols-md-6">
+        <div class="col">
+          <div class="card">
+            <h5 class="card-title">Thu 2</h5>
+            <img src="images/sun-icon.png" class="card-img-top" alt="sunny" />
+            <div class="card-body">
+              <p class="card-text"><strong>28°</strong>/18°</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-title">Fri 3</h5>
+            <img
+              src="images/partly-cloudy-icon.png"
+              class="card-img-top"
+              alt="sunny"
+            />
+            <div class="card-body">
+              <p class="card-text"><strong>24°</strong>/13°</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-title">Sat 4</h5>
+            <img
+              src="images/partly-cloudy-icon.png"
+              class="card-img-top"
+              alt="sunny"
+            />
+            <div class="card-body">
+              <p class="card-text"><strong>25°</strong>/14°</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-title">Sun 5</h5>
+            <img
+              src="images/partly-cloudy-icon.png"
+              class="card-img-top"
+              alt="sunny"
+            />
+            <div class="card-body">
+              <p class="card-text"><strong>23°</strong>/15°</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-title">Mon 6</h5>
+            <img src="images/cloud-icon.png" class="card-img-top" alt="sunny" />
+            <div class="card-body">
+              <p class="card-text"><strong>22°</strong>/14°</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5 class="card-title">Tue 7</h5>
+            <img src="images/cloud-icon.png" class="card-img-top" alt="sunny" />
+            <div class="card-body">
+              <p class="card-text"><strong>28°</strong>/15°</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="src/index.js"></script>
   </body>
 </html>

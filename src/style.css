@@ -1,0 +1,52 @@
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/039/639/original/Cloudy.jpg?1657109857");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-family: "Knewave", cursive;
+}
+.current-temperature {
+  font-family: "Knewave", cursive;
+  font-size: 100px;
+}
+.current-temperature#celcius {
+  font-size: 40px;
+  position: relative;
+  top: -34px;
+}
+.current-temperature#fahrenheit {
+  font-size: 40px;
+  position: relative;
+  top: -34px;
+}
+
+div {
+  font-family: "Pacifico", cursive;
+}
+
+.day-detail {
+  list-style-type: none;
+}
+.container {
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  width: 70%;
+  padding: 20px;
+  margin: 100px auto;
+  background-color: var(--bs-body-bg);
+  opacity: 0.7;
+}
+.search {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-left: none;
+}
+#searchPosition {
+  padding: 0;
+  border: none;
+  background: none;
+  margin-right: none;
+}
