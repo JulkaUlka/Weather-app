@@ -12,19 +12,25 @@ h1 {
   font-size: 100px;
   padding: 10px;
 }
-.current-temperature#celcius {
-  font-size: 40px;
+.units {
+  font-size: 20px;
   position: relative;
   top: -45px;
   padding: 0px;
 }
-.current-temperature#fahrenheit {
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
   font-size: 40px;
-  position: relative;
-  top: -45px;
-  padding: 0px;
+}
+a {
+  text-decoration: none;
 }
 
+.active:hover {
+  color: rgb(33, 33, 33);
+}
 div {
   font-family: "Pacifico", cursive;
 }
@@ -38,7 +44,7 @@ div {
   border-radius: 10px;
   width: 70%;
   padding: 20px;
-  margin: 100px auto;
+  margin-top: 100px;
   background-color: var(--bs-body-bg);
   opacity: 0.7;
 }
@@ -51,4 +57,7 @@ div {
   border: none;
   background: none;
   margin-left: none;
+}
+#signature {
+  text-align: center;
 }

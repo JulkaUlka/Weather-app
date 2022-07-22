@@ -63,23 +63,28 @@ function cityValue(event) {
 let citySearch = document.querySelector("#searchCity");
 citySearch.addEventListener("keypress", cityValue);
 
-function cTemp(event) {
+function fTemp(event) {
   event.preventDefault();
+  celcius.classList.remove("active");
+  fahrenheit.classList.add("active");
+
   let temp = document.querySelector("#display-temp");
   let displayTemp = temp.innerHTML;
   temp.innerHTML = Math.round((displayTemp * 9) / 5 + 32);
 }
 let tempChangeForF = document.querySelector("#fahrenheit");
-tempChangeForF.addEventListener("click", cTemp);
+tempChangeForF.addEventListener("click", fTemp);
 
-function fTemp(event) {
+function cTemp(event) {
   event.preventDefault();
+  celcius.classList.add("active");
+  fahrenheit.classList.remove("active");
   let temp = document.querySelector("#display-temp");
   let displayTemp = temp.innerHTML;
   temp.innerHTML = Math.round((5 / 9) * (displayTemp - 32));
 }
 let tempChangeForC = document.querySelector("#celcius");
-tempChangeForC.addEventListener("click", fTemp);
+tempChangeForC.addEventListener("click", cTemp);
 
 function searchLocation(position) {
   let apiKey = "ff425fafca53dfa00a8edad5ed4545b5";
