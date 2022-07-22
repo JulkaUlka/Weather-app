@@ -29,9 +29,23 @@ function displayWeatherCondition(response) {
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  document.querySelector("#sunrise").innerHTML = response.data.sys.sunrise;
+  let sunriseElement = document.querySelector("#sunrise");
+  sunriseElement.innerHTML = formateDate(response.data.sys.sunrise * 1000);
+  let sunsetElement = document.querySelector("#sunset");
+  sunsetElement.innerHTML = formateDate(response.data.sys.sunset * 1000);
 }
-
+function formateDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 function searchCity(city) {
   let apiKey = "ff425fafca53dfa00a8edad5ed4545b5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
