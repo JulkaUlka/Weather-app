@@ -10,16 +10,19 @@ h1 {
 .current-temperature {
   font-family: "Knewave", cursive;
   font-size: 100px;
+  padding: 10px;
 }
 .current-temperature#celcius {
   font-size: 40px;
   position: relative;
-  top: -34px;
+  top: -45px;
+  padding: 0px;
 }
 .current-temperature#fahrenheit {
   font-size: 40px;
   position: relative;
-  top: -34px;
+  top: -45px;
+  padding: 0px;
 }
 
 div {
@@ -39,14 +42,13 @@ div {
   background-color: var(--bs-body-bg);
   opacity: 0.7;
 }
-.search {
+.form-control form-control-sm {
   border: 1px solid #000000;
   border-radius: 10px;
-  margin-left: none;
 }
 #searchPosition {
   padding: 0;
   border: none;
   background: none;
-  margin-right: none;
+  margin-left: none;
 }
