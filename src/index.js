@@ -28,8 +28,9 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].main;
+
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -37,6 +38,14 @@ function displayWeatherCondition(response) {
   sunriseElement.innerHTML = formateDate(response.data.sys.sunrise * 1000);
   let sunsetElement = document.querySelector("#sunset");
   sunsetElement.innerHTML = formateDate(response.data.sys.sunset * 1000);
+
+  let videoElement = document.querySelector("#video");
+  if (response.data.weather[0].main === "Clouds") {
+    videoElement.setAttribute(
+      "src",
+      "images/Bill Withers  Aint No Sunshine.mp3"
+    );
+  }
 
   getForecast(response.data.coord);
 }
@@ -135,14 +144,13 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row row-cols-md-6">`;
   dailyForecast.forEach(function (days, index) {
     if (index < 7 && index > 0) {
+      let icon = days.weather[0].icon;
       forecastHTML =
         forecastHTML +
         `<div class="col">
           <div class="card">
             <h5 class="card-title">${formatForecastDays(days.dt)}</h5>
-            <img src="https://openweathermap.org/img/wn/${
-              days.weather[0].icon
-            }@2x.png" />
+            <img id="icon" src="images/${icon}.png" / >
             <div class="card-body">
               <p class="card-text"><strong>${Math.round(
                 days.temp.max
@@ -155,3 +163,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
 }
+window.onload = function () {
+  document.querySelector("video").muted = false;
+};
