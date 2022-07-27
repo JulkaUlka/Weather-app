@@ -17,7 +17,12 @@
     <link rel="stylesheet" href="src/style.css" 
     />
      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <body>    
+  <body> 
+    <span id="player">
+    <video controls autoplay loop muted id="video">
+    <source src=" " />
+</video> 
+</span>  
     <div class="container">
       <div class="row">
         <div class="col-4">
@@ -25,13 +30,8 @@
           <br>
           <div id="currentDate"></div>
           <br>
-          <div id="description"></div>
-         <video controls autoplay loop muted id="video">
-    <source src="images/The Last Passenger - Mist.mp3" />
-</video>
-          
-          
-        </div>
+          <div id="description"></div>     
+          </div>
         <div class="col-4">
             <br>
           <span class="current-temperature" id="display-temp"></span>
@@ -55,7 +55,7 @@
           <button id="searchPosition">📍</button>
         </div>
       </div>
-      <br />     
+          
       <div" id="forecast">
       <div class="col">
           <div class="card">
