@@ -61,10 +61,7 @@ function displayWeatherCondition(response) {
   if (response.data.weather[0].main === "Clear") {
     videoElement.setAttribute("src", "images/Boney M. - Sunny.mp4");
   }
-  if (
-    (response.data.weather[0].main === "Rain",
-    response.data.weather[0].main === "Drizzle")
-  ) {
+  if (response.data.weather[0].main === "Rain") {
     videoElement.setAttribute(
       "src",
       "images/The Weather Girls - It's Raining Men.mp4"
