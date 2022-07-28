@@ -18,6 +18,18 @@ currentDayShow.innerHTML = `${nowDay}, ${nowDate}`;
 
 // display weather for current day
 
+function formateDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
 function displayWeatherCondition(response) {
   document.querySelector("#cityName").innerHTML = response.data.name;
   document.querySelector("#display-temp").innerHTML = Math.round(
@@ -70,18 +82,6 @@ function displayWeatherCondition(response) {
 
   getForecast(response.data.coord);
 }
-function formateDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
-}
 
 // search city and position
 
@@ -98,10 +98,6 @@ function cityValue(event) {
     searchCity(city);
   }
 }
-
-let citySearch = document.querySelector("#searchCity");
-citySearch.addEventListener("keypress", cityValue);
-
 function searchLocation(position) {
   let apiKey = "ff425fafca53dfa00a8edad5ed4545b5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -113,6 +109,8 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+let citySearch = document.querySelector("#searchCity");
+citySearch.addEventListener("keypress", cityValue);
 let geolocation = document.querySelector("#searchPosition");
 geolocation.addEventListener("click", getCurrentLocation);
 
@@ -129,10 +127,6 @@ function fTemp(event) {
   let displayTemp = temp.innerHTML;
   temp.innerHTML = Math.round((displayTemp * 9) / 5 + 32);
 }
-
-let tempChangeForF = document.querySelector("#fahrenheit");
-tempChangeForF.addEventListener("click", fTemp);
-
 function cTemp(event) {
   event.preventDefault();
   celcius.classList.add("active");
@@ -141,6 +135,9 @@ function cTemp(event) {
   let displayTemp = temp.innerHTML;
   temp.innerHTML = Math.round((5 / 9) * (displayTemp - 32));
 }
+let tempChangeForF = document.querySelector("#fahrenheit");
+tempChangeForF.addEventListener("click", fTemp);
+
 let tempChangeForC = document.querySelector("#celcius");
 tempChangeForC.addEventListener("click", cTemp);
 
