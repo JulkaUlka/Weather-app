@@ -29,7 +29,7 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.weather[0].main;
+  descriptionElement.innerHTML = response.data.weather[0].description;
 
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
@@ -43,8 +43,29 @@ function displayWeatherCondition(response) {
   if (response.data.weather[0].main === "Clouds") {
     videoElement.setAttribute(
       "src",
-      "images/Bill Withers  Aint No Sunshine.mp3"
+      "images/Bill Withers - Ain't No Sunshine.mp4"
     );
+  }
+  if (response.data.weather[0].main === "Clear") {
+    videoElement.setAttribute("src", "images/Boney M. - Sunny.mp4");
+  }
+  if (
+    (response.data.weather[0].main === "Rain",
+    response.data.weather[0].main === "Drizzle")
+  ) {
+    videoElement.setAttribute(
+      "src",
+      "images/The Weather Girls - It's Raining Men.mp4"
+    );
+  }
+  if (response.data.weather[0].main === "Snow") {
+    videoElement.setAttribute("src", "images/Frank Sinatra - Let It Snow.mp4");
+  }
+  if (response.data.weather[0].main === "Thunderstorm") {
+    videoElement.setAttribute("src", "images/AC_DC - Thunderstruck.mp4");
+  }
+  if (response.data.weather[0].main === "Mist") {
+    videoElement.setAttribute("src", "images/Mist.mp4");
   }
 
   getForecast(response.data.coord);
@@ -163,6 +184,8 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
 }
+
+// video
 window.onload = function () {
   document.querySelector("video").muted = false;
 };

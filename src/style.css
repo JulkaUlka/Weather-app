@@ -25,6 +25,7 @@ h1 {
   text-decoration: none;
   font-size: 30px;
 }
+
 a {
   text-decoration: none;
 }
@@ -66,9 +67,15 @@ div {
   text-align: center;
 }
 video {
-  width: 250px;
+  width: 85px;
+  height: 120px;
   margin: 0px;
   padding: 0px;
+  position: fixed;
+  top: 363px;
+  left: 1102px;
+  background: rgb(24, 23, 23);
+  opacity: 0.99;
 }
 .card-title {
   margin-bottom: 0px;
@@ -78,11 +85,7 @@ video {
   margin-bottom: 0px;
   padding: 0px;
 }
-#player {
-  position: absolute;
-  top: 182px;
-  left: 1000px;
-}
+
 .col {
   padding: 1px;
   width: 100px;
