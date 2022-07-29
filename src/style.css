@@ -2,7 +2,7 @@ body {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/041/867/original/background.jpg?1658931472");
   background-size: 1366px 770px;
   background-repeat: no-repeat;
-  background-position: fixed;
+  background-attachment: fixed;
 }
 
 h1 {
