@@ -41,7 +41,9 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
+  descriptionElement.innerHTML = capitalizeFirstLetter(
+    response.data.weather[0].description
+  );
 
   document.querySelector("#feelsLike").innerHTML = Math.round(
     response.data.main.feels_like
@@ -78,6 +80,9 @@ function displayWeatherCondition(response) {
   }
 
   getForecast(response.data.coord);
+}
+function capitalizeFirstLetter(string) {
+  return string[0].toUpperCase() + string.slice(1);
 }
 
 // search city and position
