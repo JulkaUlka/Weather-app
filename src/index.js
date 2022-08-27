@@ -75,7 +75,7 @@ function displayWeatherCondition(response) {
   if (response.data.weather[0].main === "Thunderstorm") {
     videoElement.setAttribute("src", "images/AC_DC - Thunderstruck.mp4");
   }
-  if (response.data.weather[0].main === "Mist") {
+  if (response.data.weather[0].main === "Haze") {
     videoElement.setAttribute("src", "images/Mist.mp4");
   }
 
